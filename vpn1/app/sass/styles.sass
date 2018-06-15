@@ -1,0 +1,198 @@
+@import "vars"
+
+/* ------------------------------------- 
+	Font face
+ ------------------------------------- */
+@import "fonts"
+
+/* ------------------------------------- 
+	Libs import
+ ------------------------------------- */
+@import "libs"
+
+
+/* ------------------------------------- 
+	Common styles
+ ------------------------------------- */
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+
+body
+	margin: 0
+	position: relative
+	font: 16px $default_font
+	overflow-x: hidden
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.nowrap
+	white-space: nowrap
+
+.text-center
+	text-align: center
+
+
+
+/* ------------------------------------- 
+	Main styles
+ ------------------------------------- */
+.page
+	height: 2665px //del
+
+	max-width: 1920px
+	min-width: 320px
+	margin: 0 auto
+	background-color: #000
+	background-repeat: no-repeat
+	background-image: url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png")
+	background-position: calc(50% - 439.5px) -85px, calc(50% + 439.5px) -85px, calc(50% - 439.5px) 761px, calc(50% + 439.5px) 761px, calc(50% - 439.5px) 1607px, calc(50% + 439.5px) 1607px
+	position: relative
+	z-index: 1
+	&::before
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background: url('../img/top-bg.png') no-repeat -15px -258px
+		background-size: 115% auto
+		opacity: 0.75
+		z-index: -1
+
+
+.top-content, .main-content
+	margin: 0 auto
+	padding: 0 15px
+
+.top-content
+	height: 555px  //del
+
+	max-width: 1153px
+
+
+	
+.main-content
+	max-width: 1126px
+
+
+
+/* ------------------------------------- 
+	.header
+ ------------------------------------- */
+.header
+	max-width: 587px
+	padding-top: 94px
+	color: #fff
+	&__nova
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 1.125rem
+		font-weight: 500
+	&__logo
+		display: block
+		max-width: 82px
+		margin-left: 10px
+
+.page-title
+	margin-top: 0.5em
+	font-size: 2.25rem
+	font-weight: 400
+	text-align: center
+
+
+/* ----- advantages -----*/
+.advantages
+	margin: 0
+	padding-left: 0
+	list-style: none
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	li
+		flex: 0 0 40%
+		display: flex
+		align-items: center
+		&:nth-child(2n+1)
+			justify-content: flex-end
+	&__ic
+		display: inline-block
+		margin-left: 10px
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		background-size: 100%
+		&-privacy
+			width: 42px
+			height: 42px
+			background-image: url('../img/privacy.svg')
+		&-easy
+			width: 40px
+			height: 40px
+			background-image: url('../img/easy.svg')
+		&-speed
+			width: 38px
+			height: 38px
+			background-image: url('../img/speed.svg')
+		&-noRestrictions
+			width: 37px
+			height: 42px
+			background-image: url('../img/noRestrictions.svg')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------- 
+	Media styles
+ ------------------------------------- */	 
+@import "media"
