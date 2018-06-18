@@ -27,12 +27,12 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
+// body input:focus:required:invalid,
+// body textarea:focus:required:invalid
+// 	color: #666
+// body input:required:valid,
+// body textarea:required:valid
+// 	color: #666
 
 
 body
@@ -54,23 +54,81 @@ body
 	text-align: center
 
 
+.btn-wrap
+	padding-bottom: 4px
+	display: inline-block
+	background: linear-gradient(-65deg, #FFDA93, #572104 60%, #FFDA93)
+	border-radius: 5px
+	position: relative
+	margin-left: auto
+	margin-right: auto
+	z-index: 1
+	transition: all .2s
+	&::before
+		content: ''
+		display: block
+		width: 75%
+		position: absolute
+		clip-path: polygon(0 0, 100% 0, 0 100%)
+		z-index: 1
+		opacity: 1
+	&::after
+		content: ''
+		display: block
+		width: 100%
+		position: absolute
+		left: 0
+		top: 0
+		border-radius: 5px
+		z-index: 0
+	&:hover
+		background: transparent
+		transform: scale(1.025)
+		transition: all .2s
+
+.btn
+	display: inline-block
+	width: 100%
+	font: 12px $default_font
+	text-transform: uppercase
+	color: #fff	
+	border-radius: 5px
+	outline: none
+	border: none
+	transition: all .2s
+	background: transparent
+	z-index: 2
+	text-align: center
+	position: relative
+	&:hover
+		cursor: pointer
+	&:active
+		transform: translateY(1px)
+		transition: all .2s
+
 
 /* ------------------------------------- 
 	Main styles
  ------------------------------------- */
 .page
-	height: 2665px //del
-
 	max-width: 1920px
 	min-width: 320px
 	margin: 0 auto
 	background-color: #000
-	background-repeat: no-repeat
-	background-image: url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png")
-	background-position: calc(50% - 439.5px) -85px, calc(50% + 439.5px) -85px, calc(50% - 439.5px) 761px, calc(50% + 439.5px) 761px, calc(50% - 439.5px) 1607px, calc(50% + 439.5px) 1607px
 	position: relative
 	z-index: 1
 	&::before
+		content: ''
+		display: block
+		width: 1536px
+		height: 960px
+		position: absolute
+		right: 0
+		top: 0
+		background: url('../img/top-bg.png') no-repeat 171px -252px
+		background-size: 100% auto
+		z-index: -1
+	&::after
 		content: ''
 		display: block
 		width: 100%
@@ -78,9 +136,9 @@ body
 		position: absolute
 		left: 0
 		top: 0
-		background: url('../img/top-bg.png') no-repeat -15px -258px
-		background-size: 115% auto
-		opacity: 0.75
+		background-repeat: no-repeat
+		background-image: url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png"), url("../img/bg-dec.png")
+		background-position: calc(50% - 439.5px) -85px, calc(50% + 439.5px) -85px, calc(50% - 439.5px) 761px, calc(50% + 439.5px) 761px, calc(50% - 439.5px) 1607px, calc(50% + 439.5px) 1607px
 		z-index: -1
 
 
@@ -89,14 +147,18 @@ body
 	padding: 0 15px
 
 .top-content
-	height: 555px  //del
-
-	max-width: 1153px
+	max-width: 1094px
+	padding-top: 94px
+	padding-bottom: 40px
+	&--thanks
+		padding-top: 30px
 
 
 	
 .main-content
-	max-width: 1126px
+	max-width: 1094px
+	padding-bottom: 100px
+
 
 
 
@@ -105,7 +167,6 @@ body
  ------------------------------------- */
 .header
 	max-width: 587px
-	padding-top: 94px
 	color: #fff
 	&__nova
 		display: flex
@@ -113,32 +174,54 @@ body
 		justify-content: center
 		font-size: 1.125rem
 		font-weight: 500
+		&--thanks
+			margin-bottom: 50px
+			justify-content: flex-start
+			color: #D1AF74
 	&__logo
 		display: block
 		max-width: 82px
 		margin-left: 10px
+	&-icon
+		display: inline-block
+		width: 41px
+		height: 41px
+		margin-right: 10px
+
+	&__info
+		font-size: 1.25rem
+		font-style: italic
+		color: #D1AF74
+		&-par
+			margin: 5px 0
 
 .page-title
 	margin-top: 0.5em
 	font-size: 2.25rem
 	font-weight: 400
 	text-align: center
+	&--thanks
+		text-align: left
 
 
 /* ----- advantages -----*/
 .advantages
-	margin: 0
-	padding-left: 0
+	padding-right: 61px
 	list-style: none
 	display: flex
 	flex-wrap: wrap
 	justify-content: center
-	li
-		flex: 0 0 40%
+	&__group
+		display: flex
+		flex-direction: column
+		align-items: flex-end
+		margin: 0.625rem 1.4375rem
+	&__item
 		display: flex
 		align-items: center
-		&:nth-child(2n+1)
-			justify-content: flex-end
+		margin-bottom: 0.75em
+		font-size: 1.375rem
+		font-weight: 500
 	&__ic
 		display: inline-block
 		margin-left: 10px
@@ -163,31 +246,530 @@ body
 			background-image: url('../img/noRestrictions.svg')
 
 
+/* ----- download -----*/
+.download
+	margin: 1.5rem auto 0
+	color: #fff
+	&__line
+		display: flex
+		align-items: center
+		&:not(:first-child)
+			margin-top: 0.5rem
+	&__block
+		&-icons
+			margin-right: 10px
+			white-space: nowrap
+		&-icon
+			position: relative
+			display: inline-block
+			width: 55px
+			height: 55px
+			margin-right: 10px
+			background-color: rgba(#fff, .3)
+			box-shadow: 0 3px 6px rgba(#fff, .2)
+			border-radius: 50%
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: contain
+				z-index: 0
+			&-win
+				&::before
+					width: 21px
+					height: 21px
+					background-image: url('../img/application/win.png')
+			&-apl
+				&::before
+					width: 21px
+					height: 26px
+					background-image: url('../img/application/apple.png')
+			&-andr
+				&::before
+					width: 22px
+					height: 26px
+					background-image: url('../img/application/android.png')
+			&-ios
+				&::before
+					width: 33px
+					height: 17px
+					background-image: url('../img/application/ios.png')
+
+		&-device
+			font-size: 1.125rem
+			font-weight: 400
+			letter-spacing: 1px
+		&-descr
+			font-size: 1rem
+			color: #D1AF74
+			font-weight: 500
+
+
+/* ----- activation form -----*/
+.activation
+	&__form
+		margin-top: .8rem
+		padding-left: 80px
+		&-title
+			margin-top: 0
+			font-size: 1.25rem
+			font-weight: 400
+			font-style: italic
+			text-align: center
+			letter-spacing: 1px
+			color: #D1AF74
+		&-group
+			text-align: center
+		&-input
+			width: 220px
+			height: 39px
+			margin: 0 7.5px
+			padding: 0 18px
+			font: 15px $default_font
+			color: rgba(#fff, .5)
+			background: rgba(#fff, .23)
+			border: 1px solid rgba(#E2E2E2, .05)
+			border-radius: 3px
+			outline: none
+			transition: all .2s
+			&::placeholder
+				color: rgba(#fff, .39)
+			&:focus
+				border-color: rgba(#E2E2E2, .2)
+				transition: all .2s
+		&-btn-wrap
+			margin-top: 25px
+			&::before
+				height: 50px
+				background: url('../img/red-triangle.png') no-repeat 0 0 // ie
+				left: -10px // ie
+				top: -6px // ie
+			&::after
+				height: 50px
+				background: linear-gradient(15deg, #F42A2A, #A50000)
+		&-btn
+			display: inline-block
+			padding: 20px 34px 16px
+
+@supports (clip-path: polygon(0 0, 100% 0, 0 100%))
+	.activation__form-btn-wrap
+		&::before
+			left: 0
+			top: 0
+			background: linear-gradient(15deg, #A50000, #F42A2A)
+			box-shadow: 0 3px 6px rgba(#000, .16)
+			opacity: 0.2
+
+
+
+
+/* ----- casinos -----*/
+.casinos
+	padding: 1.8rem 15px
+	background-color: #fff
+	border-radius: 3px
+	counter-reset: i
+	&-title
+		text-align: center
+		font-size: 1.5rem
+		font-weight: 700
+		color: #2C2D36
+	
+	&__top
+		&-container
+			margin-top: 3.4rem
+			display: flex
+			justify-content: center
+			align-items: center
+		&-item
+			flex: 0 0 254px
+			max-width: 254px
+			min-height: 513px
+			margin: 0 6.5px
+			padding: 10px 0
+			background-color: #fff
+			box-shadow: 0 3px 20px rgba(#000, .11)
+			border-radius: 3px
+			position: relative
+			&::before
+				content: counter(i)
+				counter-increment: i
+				display: block
+				width: 41px
+				height: 41px
+				position: absolute
+				left: 7px
+				top: -12px
+				background: linear-gradient(20deg, #A50000, #F42A2A)
+				border: 2px solid #910202
+				border-radius: 50%
+				text-align: center
+				line-height: 41px
+				color: #fff
+				font-size: 18px
+				font-weight: 900
+				z-index: 0
+			&--1, &--3
+				order: 1
+			&--1
+				flex: 0 0 288px
+				max-width: 288px
+				padding: 29px 0
+				&::before
+					width: 50px
+					height: 50px
+					font-size: 24px
+					line-height: 50px
+					left: 31px
+					top: -8px
+			
+
+
+	&__logo
+		display: flex
+		justify-content: center
+		max-height: 85px
+		position: relative
+
+	&__rait
+		margin-top: 12px
+		text-align: center
+		padding: 0 20px
+		&-icon
+			display: inline-block
+			width: 16px
+			height: 15px
+			margin: 0 2px
+			color: #FFD35A
+			&::before
+				content: '\e803'
+				font-family: "fontello"
+				font-style: normal
+				font-weight: normal
+				speak: none
+				display: inline-block
+				text-decoration: inherit
+				text-align: center
+				font-variant: normal
+				text-transform: none
+				line-height: 1em
+				-webkit-font-smoothing: antialiased
+				-moz-osx-font-smoothing: grayscale
+		&--other
+			display: none
+
+	&__review
+		margin-top: 8px
+		padding: 0 20px
+		text-align: center
+		&-link
+			font-size: 0.75rem
+			text-transform: uppercase
+			color: #2C2D36
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+
+	&__info
+		&--top
+			padding: 10px 20px 0
+			margin-top: 16px
+			border-top: 2px solid #E8E7E7
+		&-title
+			font-size: 0.625rem
+			text-transform: uppercase
+			color: #989898
+		&-data
+			margin: 10px 0 0 0
+			padding-left: 0
+			font-size: 1rem
+			line-height: 1.5
+			color: #2C2D36
+			font-weight: 700
+			list-style: none
+			li
+				display: inline-block
+				min-height: 48px
+				padding-left: 10px
+				position: relative
+				&::before
+					content: '.'
+					display: inline-block
+					position: relative
+					left: -0.375rem
+					top: -0.3125rem
+					font-size: 1rem
+					line-height: 1
+					color: #2C2D36
+					font-weight: 700
+					z-index: 0
+		&-payout
+			margin-right: 5px
+		&-total
+			margin-left: 5px
+
+	&__bonus
+		&--top
+			padding: 10px 20px 0
+			margin-top: 2px
+			border-top: 2px solid #E8E7E7
+
+	&__deposit
+		&--top
+			margin-top: 8px
+			padding: 10px 20px 0
+			border-top: 2px solid #E8E7E7
+		&-data
+			min-height: 100px
+			margin-top: 8px
+			display: flex
+			flex-wrap: wrap
+		&-img
+			display: block
+			&:nth-child(3)
+				margin-right: 0
+			&--top
+				width: 66px
+				height: 42px
+				margin: 0 8px 8px 0
+			&--other
+				width: 50px
+				height: 31px
+				margin: 0 5px 5px 0
+		&--other
+			margin-top: 16px
+			.casinos__deposit-data
+				min-height: 1px
+
+	&__link-wrap
+		display: block
+		max-width: 183px
+		margin: 2px auto
+		&::before
+			height: 44px
+			background: url('../img/green-triangle.png') no-repeat 0 0 // ie
+			
+		&::after
+			height: 44px
+			background: linear-gradient(-105deg, #004A28, #26A500)
+	&__link
+		padding: 15px 0
+		text-decoration: none
+
+
+
+	&__other-container
+		max-width: 883px
+		margin: 1.55rem 69px 0 86px
+
+
+	&__other-item
+		display: flex
+		padding: 20px 0
+		&:not(:last-child)
+			border-bottom: 2px solid #E8E7E7
+
+	&__other-number
+		padding-left: 38px
+		padding-top: 18px
+		&::before
+			content: counter(i)
+			counter-increment: i
+			font-size: 18px
+			font-weight: 900
+			color: #2C2D36
+			position: absolute
+			left: 0
+			top: 50%
+
+	&__other-block
+		margin: 0 20px
+		flex-grow: 1
+		&:last-child
+			margin-right: 0
+		&--flex1
+			flex: 0 0 150px
+			max-width: 150px
+		&--flex2
+			flex: 0 0 240px
+			max-width: 240px
+		&--flex3
+			flex: 0 0 165px
+			max-width: 165px
+		&--flex4
+			flex: 0 0 183px
+			max-width: 183px
 
 
 
 
 
+@supports (clip-path: polygon(0 0, 100% 0, 0 100%))
+	.casinos__link-wrap
+		&::before
+			left: 0
+			top: 0
+			background: linear-gradient(15deg, #02e62d, transparent)
+			box-shadow: 0 3px 6px rgba(#000, .16)
+			opacity: 0.2
+
+
+.rtl // arab version right to left
+	.header--thanks
+		max-width: 435px
+	.header__nova--thanks
+		justify-content: flex-end
+	.page-title--thanks, .header__info
+		text-align: right
+	.download
+		width: 100%
+	.download__line
+		justify-content: flex-start
+		flex-direction: row-reverse
+	.download__block-icons, .download__block-icon
+		margin-left: 10px
+		margin-right: 0
+	.download__block-text
+		text-align: right
+
+	.casinos__top-item::before
+		left: auto
+		right: 7px
+	.casinos__top-item--1::before
+		right: 31px
+	.casinos__other-item
+		flex-direction: row-reverse
+	.casinos__other-block--flex2, .casinos__other-block--flex3
+		text-align: right
+	.casinos__info-title, .casinos__info-data
+		text-align: right
+	.casinos__deposit-data
+		flex-direction: row-reverse
+	.casinos__other-number
+		padding-left: 0
+		padding-right: 38px
+		&::before
+			left: auto
+			right: 0
 
 
 
+.footer
+	margin-top: 3.625rem
+	padding-top: 2.1875rem
+	border-top: 1px solid #fff
+	display: flex
+	flex-wrap: wrap
+	align-items: flex-start
+	&__links
+		flex: 0 0 48%
+		max-width: 48%
+		order: 1
+		display: flex
+		justify-content: space-between
+		&-block
+			padding: 0 10px
+		&-list
+			margin: 0.875rem 0 0
+			padding-left: 0
+			list-style: none
+			li
+				margin-bottom: 5px
+		&-title
+			text-transform: uppercase
+			font: 0.75rem 'Montserrat', sans-serif
+			color: #DFE6FD
+		a
+			font: 500 14px 'Montserrat', sans-serif
+			color: #D8D8D8
+			text-decoration: none
+			transition: all .2s
+			&:hover
+				text-decoration: underline
+				color: lighten(#D8D8D8, 15%)
+				transition: all .2s
+
+	&__images
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+		flex: 0 0 21%
+		max-width: 21%
+		order: 3
+		*
+			display: block
+			margin-left: 14px
+			margin-bottom: 5px
+		&-age
+			width: 39px
+			height: 39px
+		&-gamcare
+			width: 39px
+			height: 43px
+		&-dmca
+			width: 100px
+			height: 43px
+		&-gambleaware
+			width: 130px
+			height: 20px
 
 
+	&__social
+		flex: 0 0 31%
+		max-width: 31%
+		order: 2
+		display: flex
+		justify-content: center
+		padding-left: 47px
+		&-link
+			display: inline-block
+			width: 35px
+			height: 22px
+			margin-right: 10px
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			transition: all .1s
+			&:hover
+				transform: scale(1.07)
+				transition: all .1s
+		&-fb
+			background-image: url('../img/social/facebook.png')
+		&-tw
+			background-image: url('../img/social/twitter.png')
+		&-in
+			background-image: url('../img/social/linkedIn.png')
+		&-ig
+			background-image: url('../img/social/instagram.png')
+		&-gp
+			background-image: url('../img/social/google.png')
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx),
+only screen and (min-resolution: 144dpi)
+	.footer
+		&__social
+			&-link
+				background-size: auto 21px
+			&-fb
+				background-image: url('../img/social/facebook@2x.png')
+			&-tw
+				background-image: url('../img/social/twitter@2x.png')
+			&-in
+				background-image: url('../img/social/linkedIn@2x.png')
+			&-ig
+				background-image: url('../img/social/instagram@2x.png')
+			&-gp
+				background-image: url('../img/social/google@2x.png')
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
 
 
 

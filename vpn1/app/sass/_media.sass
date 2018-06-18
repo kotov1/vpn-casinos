@@ -3,22 +3,221 @@
 
 @media only screen and (max-width : 1199px)
 
+	.page::before
+		background-position: 450px -150px
+
+	.activation__form
+		padding-left: 0
+
+	.casinos__other-container
+		max-width: 100%
+		margin: 1.55rem 30px 0 30px
+
+	.footer__links, .footer__social, .footer__images
+		flex: 0 0 100%
+		max-width: 100%
+	.footer__social
+		margin-bottom: 25px
+		padding-left: 0
+	.footer__images
+		justify-content: center
+		align-items: center
+		margin-bottom: 25px
+		*
+			margin: 10px
+	.footer__links
+		order: 4
+
+	
+	.header__nova--thanks
+		justify-content: center
+	.page-title--thanks, .header__info
+		text-align: center
+	.download
+		max-width: 315px
+
+
+
+
 	/**/
 
 
 
 @media only screen and (max-width : 991px)
 
+	.page::before
+		opacity: 0.5
+		background-size: 50% auto
+		background-position: 100% -45px
+
+
+	.casinos__top-container
+		display: block
+		.casinos__top-item
+			max-width: 320px
+			margin: 0 auto 30px
+	.casinos__deposit-data
+		min-height: 1px
+
+	.casinos__other-container
+		margin: 2.8rem 0 0
+
+
+	// .rtl // arab version right to left back
+	// 	.casinos__other-block--flex2, .casinos__other-block--flex3
+	// 		text-align: left
+	// 	.casinos__info-title
+	// 		text-align: left
+	// 	.casinos__other-number
+	// 		padding-left: 38px
+	// 		padding-right: 0
+	// 		&::before
+	// 			left: 0
+	// 			right: auto
+
+
+	.casinos__other-item
+		flex-direction: column!important
+		max-width: 320px
+		margin: 0 auto 30px
+		position: relative
+
+	.casinos__other-block
+		flex: 0 0 auto
+		max-width: 100%
+		margin: 0
+		&--flex1
+			min-height: 108px
+		&--flex3
+			margin-top: 10px
+		&--flex4
+			margin-top: 10px
+			.casinos__info-title
+				display: none
+
+		.casinos__rait
+			display: none
+		.casinos__rait--other
+			display: block
+		
+		
+
+	.casinos__other-number
+		padding-left: 0
+		padding-top: 5px
+		&::before
+			left: 4px
+			top: 50%
+
+	.casinos__info-data li:not(:first-child)
+		margin-top: 5px
+
+
+
+
+
+
+
 	/**/
 
 
 
 @media only screen and (max-width : 767px)
+	
+	.page::before
+		opacity: 1
+		background-size: 35% auto
+
+	.top-content
+		padding-top: 207px
+
+	.header
+		margin-left: auto
+		margin-right: auto
+
+	.page-title
+		margin-top: 0.8em
+		font-size: 1.875rem
+
+	.advantages
+		padding-right: 0
+		&__group
+			display: block
+			width: 100%
+			margin-left: 0
+			margin-right: 0
+		&__item
+			flex-direction: row-reverse
+			justify-content: flex-end
+			margin-bottom: 0.65em
+		&__ic
+			margin: 0 10px 0 0
+
+	.main-content
+		padding-top: 1.1rem
+
+
+	.casinos__top-container
+		margin-top: 1.5rem
+	
+	.casinos-title
+		font-size: 1.25rem
+		line-height: 1.4
+		margin-bottom: 0
+	
+	.casinos__top-item--1
+		padding: 35px 0 33px
+		&::before
+			left: 13px
+	.rtl .casinos__top-item
+		&::before
+			left: auto
+			right: 13px
+	.casinos__top-item--1::before
+		.casinos__rait
+			margin-top: 2px
+	.casinos__info-data
+		margin-top: 6px
+	.casinos__bonus
+		margin-top: 6px
+
+	.footer__links
+		flex-direction: column
+	.footer__links-title
+		font-size: 1rem
+		text-decoration: underline
+		margin: 7px 0
+
+	.header__nova--thanks
+		margin-bottom: 20px
+		color: #FFDA93
+	.rtl
+		.header__nova--thanks
+			justify-content: center
+		.page-title--thanks
+			text-align: center
+		.header__info
+			margin: 1.2rem 0 2rem
+			text-align: center
+
+
 
 	/**/
 
 
 @media only screen and (max-width : 575px)
+
+	.activation
+		&__form
+			margin-top: 2rem
+		&__form-input
+			display: block
+			width: 100%
+			max-width: 290px
+			height: 48px
+			margin: 20px auto
+		&-btn-wrap
+			margin-top: 12px
 
 	/**/
 
@@ -65,9 +264,9 @@
 
 
 
-@media only screen and (min-width : 1600px)
+@media only screen and (min-width : 1700px)
 
 	.page::before
-		background-size: 100% auto
+		background-position: 0 -252px
 
 	/**/

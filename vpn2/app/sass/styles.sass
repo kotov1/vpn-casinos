@@ -1,0 +1,954 @@
+@import "vars"
+
+/* ------------------------------------- 
+	Font face
+ ------------------------------------- */
+@import "fonts"
+
+/* ------------------------------------- 
+	Libs import
+ ------------------------------------- */
+@import "libs"
+
+
+/* ------------------------------------- 
+	Common styles
+ ------------------------------------- */
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::placeholder
+	color: #666
+	opacity: 1
+
+
+body
+	margin: 0
+	position: relative
+	font: 16px $default_font
+	overflow-x: hidden
+
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.nowrap
+	white-space: nowrap
+
+.text-center
+	text-align: center
+
+
+.btn-wrap
+	margin-left: auto
+	margin-right: auto
+	
+.btn
+	display: inline-block
+	width: 100%
+	font: 12px $default_font
+	text-transform: uppercase
+	color: #fff	
+	border-radius: 5px
+	outline: none
+	border: none
+	transition: all .2s
+	background: linear-gradient(90deg, #2A49F4, #60ADFF)
+	z-index: 2
+	text-align: center
+	position: relative
+	&:hover
+		cursor: pointer
+		box-shadow: 0 0 5px rgba(#2A49F4, .5)
+		transform: rotate(1deg)
+	&:active
+		transform: translateY(1px)
+		transition: all .2s
+
+
+/* ------------------------------------- 
+	Main styles
+ ------------------------------------- */
+.page
+	max-width: 1920px
+	min-width: 320px
+	margin: 0 auto
+	background-color: #010B45
+	background: linear-gradient(-45deg, #010B45, #002F9F)
+	position: relative
+	z-index: 1
+	overflow-x: hidden
+	&::before
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background-image: radial-gradient(circle 290px at 34% 11%,rgba(#116aed, .8), transparent)
+		z-index: -1
+	&::after
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background: url('../img/bg-dec.png') no-repeat 50% 0
+		background-size: 100% auto
+		z-index: -1
+
+
+
+	&__thanks
+		&::before
+			background-image: radial-gradient(circle 290px at 48% 10%, rgba(17, 106, 237, 0.8), transparent)
+
+		.main-content
+			padding-bottom: 30px
+
+
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx),
+only screen and (min-resolution: 144dpi)
+	.page
+		&::after
+			background: url('../img/bg-dec@2x.png') no-repeat 0 0
+			background-size: 100% auto
+
+
+.top-content, .main-content
+	max-width: 1094px
+	margin: 0 auto
+	padding: 0 15px
+	position: relative
+
+.top-content
+	padding-top: 30px
+	padding-bottom: 59px
+
+.main-content
+	max-width: 1064px
+	padding-bottom: 150px
+	background-color: #fff
+	border-radius: 3px
+
+
+.bg-shadow
+	position: absolute
+	background: linear-gradient(-45deg, #fff, transparent)
+	z-index: -1
+	&1
+		width: 923px
+		height: 637px
+		opacity: 0.04
+		transform: rotate(-33deg)
+		top: -340px
+		left: -300px
+	&2
+		width: 1443px
+		height: 877px
+		opacity: 0.05
+		transform: rotate(-25deg)
+		top: -550px
+		left: -300px
+	&3
+		width: 2100px
+		height: 1016px
+		opacity: 0.03
+		transform: rotate(-20deg)
+		top: -625px
+		left: -217px
+
+
+/* ------------------------------------- 
+	.header
+ ------------------------------------- */
+.header
+	max-width: 627px
+	margin-left: auto
+	color: #fff
+	&--thanks
+		max-width: 590px
+	&__nova
+		height: 39px
+		position: relative
+		padding-right: 35px
+		display: flex
+		align-items: center
+		justify-content: center
+		font-size: 1.125rem
+		font-weight: 500
+		&-more
+			position: absolute
+			right: 0
+			top: 0
+			display: inline-block
+			padding: 10px 40px
+			border: 2px solid #60ADFF
+			border-radius: 3px
+			text-transform: uppercase
+			font-size: 0.75rem
+			color: #fff
+			text-decoration: none
+			text-shadow: 0 3px 6px rgba(#fff,.24)
+			box-shadow: 0 3px 6px rgba(#000,.16)
+			transition: all .2s
+			&:hover
+				box-shadow: inset 0 0px 6px rgba(#fff,.5)
+				transition: all .2s
+				text-shadow: none
+		&--thanks
+			padding-right: 100px
+			
+	&__logo
+		display: inline-block
+		width: 82px
+		margin-left: 10px
+	&-icon
+		display: inline-block
+		width: 41px
+		height: 41px
+		margin-right: 10px
+
+	&__info
+		font-weight: 500
+		color: #fff
+		&-par
+			margin: 5px 0
+	
+
+.page-title
+	margin: 1.2em 0 0.3em
+	padding-right: 3em
+	font: 800 2.25rem $default_font
+	text-align: center
+	&--thanks
+		text-align: left
+
+
+/* ----- player -----*/
+.player
+	position: absolute
+	width: 192px
+	left: 162px
+	bottom: -197px
+	z-index: 0
+	&::before
+		content: ''
+		display: block
+		width: 395px
+		height: 179px
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		top: 150px
+		background: url('../img/units.png') no-repeat 50% 50%
+		z-index: -1
+	&__thoughts
+		padding: 29px 20px 29px 28px
+		position: absolute
+		top: -67px
+		left: -200px
+		width: 270px
+		min-height: 119px
+		background: url('../img/thoughts.png') no-repeat 0 0
+		color: #000
+		font: italic 500 1em $default_font
+	&__thought
+		margin: 3px 0
+
+	&--thanks
+		left: 103px
+		bottom: -107px
+		&::before
+			width: 455px
+			height: 340px
+			background: url('../img/units2.png') no-repeat 50% 50%
+			left: 64%
+			top: -52px
+
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx),
+only screen and (min-resolution: 144dpi)
+	.player
+		&::before
+			background: url('../img/units@2x.png') no-repeat 0 50%
+			background-size: 395px 179px
+			left: 30%
+		&--thanks
+			&::before
+				background: url('../img/units2@2x.png') no-repeat 50% 50%
+				background-size: 455px 340px
+				left: 64%
+
+
+
+
+
+
+/* ----- advantages -----*/
+.advantages
+	padding-right: 61px
+	list-style: none
+	display: flex
+	flex-wrap: wrap
+	&__group
+		display: flex
+		flex-direction: column
+		margin: 0.625rem 1.4375rem
+	&__item
+		display: flex
+		align-items: center
+		margin-bottom: 0.75em
+		font-size: 1.375rem
+		font-weight: 500
+	&__ic
+		display: inline-block
+		margin-right: 10px
+		background-repeat: no-repeat
+		background-position: 50% 50%
+		background-size: 100%
+		&-privacy
+			width: 42px
+			height: 42px
+			background-image: url('../img/privacy.svg')
+		&-easy
+			width: 40px
+			height: 40px
+			background-image: url('../img/easy.svg')
+		&-speed
+			width: 38px
+			height: 38px
+			background-image: url('../img/speed.svg')
+		&-noRestrictions
+			width: 37px
+			height: 42px
+			background-image: url('../img/noRestrictions.svg')
+
+
+/* ----- download -----*/
+.download
+	margin-top: 1.5rem
+	color: #fff
+	&__line
+		display: flex
+		align-items: center
+		&:not(:first-child)
+			margin-top: 0.5rem
+	&__block
+		&-icons
+			margin-right: 10px
+			white-space: nowrap
+		&-icon
+			position: relative
+			display: inline-block
+			width: 55px
+			height: 55px
+			margin-right: 10px
+			background-color: rgba(#fff, .3)
+			box-shadow: 0 3px 6px rgba(#fff, .2)
+			border-radius: 50%
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				left: 50%
+				top: 50%
+				transform: translate(-50%, -50%)
+				background-repeat: no-repeat
+				background-position: 50% 50%
+				background-size: contain
+				z-index: 0
+			&-win
+				&::before
+					width: 21px
+					height: 21px
+					background-image: url('../img/application/win.png')
+			&-apl
+				&::before
+					width: 21px
+					height: 26px
+					background-image: url('../img/application/apple.png')
+			&-andr
+				&::before
+					width: 22px
+					height: 26px
+					background-image: url('../img/application/android.png')
+			&-ios
+				&::before
+					width: 33px
+					height: 17px
+					background-image: url('../img/application/ios.png')
+
+		&-device
+			font-size: 1.125rem
+			font-weight: 400
+			letter-spacing: 1px
+		&-descr
+			font-size: 1rem
+			font-weight: 500
+
+
+/* ----- activation form -----*/
+.activation
+	&__form
+		margin-top: .8rem
+		&-title
+			margin-top: 0
+			font-size: 1.25rem
+			font-weight: 500
+			font-style: italic
+			text-align: center
+			color: #000
+		&-group
+			text-align: center
+		&-input
+			width: 220px
+			height: 39px
+			margin: 0 7.5px
+			padding: 0.625em 18px
+			font: 15px $default_font
+			color: darken(#BEBABA, 15%)
+			background: rgba(#fff, .23)
+			border: 1px solid #E2E2E2
+			border-radius: 3px
+			outline: none
+			transition: all .2s
+			&::placeholder
+				color: #BEBABA
+				font-weight: 500
+				font: 15px $default_font
+			&:focus
+				border-color: darken(#E2E2E2, 20%)
+				transition: all .2s
+		&-btn-wrap
+			max-width: 183px
+			margin-top: 25px
+		&-btn
+			display: inline-block
+			padding: 13px 30px 12px
+
+@supports (clip-path: polygon(0 0, 100% 0, 0 100%))
+	.activation__form-btn-wrap
+		&::before
+			left: 0
+			top: 0
+			background: linear-gradient(15deg, #A50000, #F42A2A)
+			box-shadow: 0 3px 6px rgba(#000, .16)
+			opacity: 0.2
+
+
+
+
+/* ----- casinos -----*/
+.casinos
+	padding: 2.4rem 0 2.2em
+	counter-reset: i
+
+	&__title
+		font-size: 1.5rem
+		font-weight: 800
+		color: $text_color
+		text-align: center
+	
+	&__top
+		&-container
+			margin-top: 3.4rem
+			display: flex
+			justify-content: center
+			align-items: center
+		&-item
+			flex: 0 0 254px
+			max-width: 254px
+			min-height: 513px
+			margin: 0 15px
+			padding: 10px 0
+			background-color: #fff
+			box-shadow: 0 3px 20px rgba(#000, .11)
+			border-radius: 3px
+			position: relative
+			&::before
+				content: counter(i)
+				counter-increment: i
+				display: block
+				width: 45px
+				height: 32px
+				position: absolute
+				left: -2px
+				top: 20px
+				background: linear-gradient(-90deg, #03FA62, #60ADFF)
+				box-shadow: 0 3px 6px rgba(#000, .11)
+				text-align: center
+				line-height: 32px
+				color: #fff
+				font-size: 18px
+				font-weight: 900
+				z-index: 0
+			&--1, &--3
+				order: 1
+
+			
+
+
+	&__logo
+		display: flex
+		justify-content: center
+		max-height: 85px
+		position: relative
+
+	&__rait
+		margin-top: 12px
+		text-align: center
+		padding: 0 20px
+		&-icon
+			display: inline-block
+			width: 16px
+			height: 15px
+			margin: 0 2px
+			color: #FFD35A
+			&::before
+				content: '\e803'
+				font-family: "fontello"
+				font-style: normal
+				font-weight: normal
+				speak: none
+				display: inline-block
+				text-decoration: inherit
+				text-align: center
+				font-variant: normal
+				text-transform: none
+				line-height: 1em
+				-webkit-font-smoothing: antialiased
+				-moz-osx-font-smoothing: grayscale
+		&--other
+			display: none
+
+	&__review
+		margin-top: 8px
+		padding: 0 20px
+		text-align: center
+		&-link
+			font-size: 0.75rem
+			text-transform: uppercase
+			color: #2C2D36
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+
+	&__info
+		&--top
+			padding: 10px 20px 0
+			margin-top: 16px
+			border-top: 2px solid #E8E7E7
+		&-title
+			font-size: 0.625rem
+			text-transform: uppercase
+			color: #989898
+		&-data
+			margin: 10px 0 0 0
+			padding-left: 0
+			font-size: 1rem
+			line-height: 1.5
+			color: #2C2D36
+			font-weight: 500
+			list-style: none
+			li
+				display: inline-block
+				min-height: 48px
+				padding-left: 10px
+				position: relative
+				&::before
+					content: '.'
+					display: inline-block
+					position: relative
+					left: -0.375rem
+					top: -0.3125rem
+					font-size: 1rem
+					line-height: 1
+					color: #2C2D36
+					font-weight: 500
+					z-index: 0
+		&-payout
+			margin-right: 5px
+		&-total
+			margin-left: 5px
+
+	&__bonus
+		&--top
+			padding: 10px 20px 0
+			margin-top: 2px
+			border-top: 2px solid #E8E7E7
+
+	&__deposit
+		&--top
+			margin-top: 8px
+			padding: 10px 20px 0
+			border-top: 2px solid #E8E7E7
+		&-data
+			min-height: 100px
+			margin-top: 8px
+			display: flex
+			flex-wrap: wrap
+		&-img
+			display: block
+			&:nth-child(3)
+				margin-right: 0
+			&--top
+				width: 66px
+				height: 42px
+				margin: 0 8px 8px 0
+			&--other
+				width: 50px
+				height: 31px
+				margin: 0 5px 5px 0
+		&--other
+			margin-top: 16px
+			.casinos__deposit-data
+				min-height: 1px
+
+	&__link-wrap
+		display: block
+		max-width: 194px
+		margin: 2px auto
+		&::before
+			height: 44px
+			background: url('../img/green-triangle.png') no-repeat 0 0 // ie
+			
+		&::after
+			height: 44px
+			background: linear-gradient(-105deg, #004A28, #26A500)
+	&__link
+		padding: 13px 0
+		text-decoration: none
+
+
+
+	&__other-container
+		max-width: 883px
+		margin: 1.55rem 60px 0 77px
+
+
+	&__other-item
+		display: flex
+		padding: 20px 0
+		&:not(:last-child)
+			border-bottom: 2px solid #E8E7E7
+
+
+	&__other-number
+		padding-left: 38px
+		padding-top: 18px
+		&::before
+			content: counter(i)
+			counter-increment: i
+			font-size: 18px
+			font-weight: 900
+			color: #2C2D36
+			position: absolute
+			left: 0
+			top: 50%
+
+	&__other-block
+		margin: 0 20px
+		flex-grow: 1
+		&:last-child
+			margin-right: 0
+		&--flex1
+			flex: 0 0 150px
+			max-width: 150px
+		&--flex2
+			flex: 0 0 240px
+			max-width: 240px
+		&--flex3
+			flex: 0 0 165px
+			max-width: 165px
+		&--flex4
+			flex: 0 0 183px
+			max-width: 183px
+	.casinos__rait
+		margin: 6px 0
+
+
+
+
+@supports (clip-path: polygon(0 0, 100% 0, 0 100%))
+	.casinos__link-wrap
+		&::before
+			left: 0
+			top: 0
+			background: linear-gradient(15deg, #02e62d, transparent)
+			box-shadow: 0 3px 6px rgba(#000, .16)
+			opacity: 0.2
+
+
+.text
+	max-width: 883px
+	margin: 0 auto
+	color: $text_color
+	&__row
+		display: flex
+		flex-wrap: wrap
+		margin: 0 -15px
+	&__block
+		padding: 0 15px
+		&-4
+			flex: 0 0 33.33%
+		 	max-width: 33.33%
+		&-12
+			flex: 0 0 100%
+			max-width: 100%
+	&__title
+		margin-top: 1.8em
+		font-size: 1.5rem
+		font-weight: 800
+	&__subtitle
+		font-size: 1.125rem
+		font-weight: 800
+		padding-right: 1em
+	&__par
+		font-size: 1rem
+		font-weight: 300
+
+
+// arab version right to left
+.page.rtl::before
+	background-image: radial-gradient(circle 290px at 64% 11%, rgba(17, 106, 237, 0.8), transparent)
+
+.rtl
+	.header	
+		margin-left: 0
+		margin-right: auto
+	.header--thanks
+		text-align: right
+		max-width: 555px
+
+
+	.header__nova
+		padding-right: 0
+		padding-left: 35px
+	.header__nova--thanks
+		padding-left: 115px
+		flex-direction: row-reverse
+		justify-content: flex-start
+		.header-icon
+			margin-right: 0
+			margin-left: 50px
+	.header__nova-more
+		right: auto
+		left: 0
+
+
+	.page-title--thanks
+		text-align: right
+		padding-right: 0
+
+
+	.player
+		left: auto
+		right: 162px
+	.player__thought
+		text-align: right
+	
+	.download__line
+		flex-direction: row-reverse
+	.download__block-icons, .download__block-icon
+		margin-right: 0
+		margin-left: 10px
+
+	.casinos__top-item::before
+		left: auto
+		right: 0
+	.casinos__other-item
+		flex-direction: row-reverse
+	.casinos__other-block--flex2, .casinos__other-block--flex3
+		text-align: right
+	.casinos__info-title, .casinos__info-data
+		text-align: right
+	.casinos__deposit-data
+		flex-direction: row-reverse
+	.casinos__other-number
+		padding-left: 0
+		padding-right: 38px
+		&::before
+			left: auto
+			right: 0
+	.text
+		text-align: right
+
+
+
+.faq
+	max-width: 1064px
+	margin: 50px auto 0
+	padding: 0 115px 0 15px
+	display: flex
+	justify-content: space-between
+	&__block1
+		width: 100%
+	&__block2
+		flex: 1 0 auto
+	&-title
+		margin-bottom: 27px
+		&-link
+			font-size: 1rem
+			color: #fff
+			&:hover
+				text-decoration: none
+	&__list
+		padding-left: 0
+		color: #fff
+		display: flex
+		flex-wrap: wrap
+		li
+			margin-bottom: 15px
+			flex: 0 0 33.33%
+			max-width: 33%
+	&-link
+		font-size: 0.875rem
+		color: #fff
+		&:hover
+			text-decoration: none
+
+
+
+
+.footer
+	margin-top: 4.5rem
+	padding: 2.1875rem 0
+	background: #17181A
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		max-width: 1094px
+		margin: 0 auto
+	&__links
+		flex: 0 0 48%
+		max-width: 48%
+		order: 1
+		display: flex
+		justify-content: space-between
+		&-block
+			padding: 0 10px
+		&-list
+			margin: 0.875rem 0 0
+			padding-left: 0
+			list-style: none
+			li
+				margin-bottom: 5px
+		&-title
+			text-transform: uppercase
+			font: 0.75rem 'Montserrat', sans-serif
+			color: #DFE6FD
+		a
+			font: 500 14px 'Montserrat', sans-serif
+			color: #D8D8D8
+			text-decoration: none
+			transition: all .2s
+			&:hover
+				text-decoration: underline
+				color: lighten(#D8D8D8, 15%)
+				transition: all .2s
+
+	&__images
+		display: flex
+		flex-wrap: wrap
+		justify-content: flex-end
+		flex: 0 0 21%
+		max-width: 21%
+		order: 3
+		*
+			display: block
+			margin-left: 14px
+			margin-bottom: 5px
+		&-age
+			width: 39px
+			height: 39px
+		&-gamcare
+			width: 39px
+			height: 43px
+		&-dmca
+			width: 100px
+			height: 43px
+		&-gambleaware
+			width: 130px
+			height: 20px
+
+
+	&__social
+		flex: 0 0 31%
+		max-width: 31%
+		order: 2
+		display: flex
+		justify-content: center
+		padding-left: 47px
+		&-link
+			display: inline-block
+			width: 35px
+			height: 22px
+			margin-right: 10px
+			background-repeat: no-repeat
+			background-position: 50% 50%
+			transition: all .1s
+			&:hover
+				transform: scale(1.07)
+				transition: all .1s
+		&-fb
+			background-image: url('../img/social/facebook.png')
+		&-tw
+			background-image: url('../img/social/twitter.png')
+		&-in
+			background-image: url('../img/social/linkedIn.png')
+		&-ig
+			background-image: url('../img/social/instagram.png')
+		&-gp
+			background-image: url('../img/social/google.png')
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min-resolution: 1.5dppx),
+only screen and (min-resolution: 144dpi)
+	.footer
+		&__social
+			&-link
+				background-size: auto 21px
+			&-fb
+				background-image: url('../img/social/facebook@2x.png')
+			&-tw
+				background-image: url('../img/social/twitter@2x.png')
+			&-in
+				background-image: url('../img/social/linkedIn@2x.png')
+			&-ig
+				background-image: url('../img/social/instagram@2x.png')
+			&-gp
+				background-image: url('../img/social/google@2x.png')
+
+
+		
+
+
+
+
+/* ------------------------------------- 
+	Media styles
+ ------------------------------------- */	 
+@import "media"
