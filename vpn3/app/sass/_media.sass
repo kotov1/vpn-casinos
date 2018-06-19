@@ -3,16 +3,18 @@
 
 @media only screen and (max-width : 1199px)
 
-	.page::before
-		background-position: 450px -150px
+	.page
+		background-position: 60% 0
 
-	.activation__form
-		padding-left: 0
+	.header__nova-more
+		display: none
+	
+	.header__nova
+		justify-content: flex-end
 
-	.casinos__other-container
-		max-width: 100%
-		margin: 1.55rem 30px 0 30px
 
+	.footer__inner
+		padding: 0 15px
 	.footer__links, .footer__social, .footer__images
 		flex: 0 0 100%
 		max-width: 100%
@@ -29,27 +31,62 @@
 		order: 4
 
 	
-	.header__nova--thanks
+	.header--thanks
+		max-width: 450px!important
+
+	.step
+		display: none
+
+	.casinos--thanks
+		margin-top: 0
+	.casinos__winners
+		display: none
+	.casinos__other-container
+		flex: 0 0 100%
+		max-width: 100%
+
+	.casinos__other-block--flex3
+		display: block
+
+	.casinos__other-item
 		justify-content: center
-	.page-title--thanks, .header__info
-		text-align: center
-	.download
-		max-width: 315px
-
-
 
 
 	/**/
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media only screen and (max-width : 991px)
 
-	.page::before
-		opacity: 0.5
-		background-size: 50% auto
-		background-position: 100% -45px
+	.page
+		background-position: 0 0
 
+	.top-content
+		padding: 500px 15px 0
+
+	.header
+		max-width: 450px
+		margin-left: auto
+		margin-right: auto
+
+	.page-title
+		padding-left: 0
 
 	.casinos__top-container
 		display: block
@@ -59,14 +96,18 @@
 	.casinos__deposit-data
 		min-height: 1px
 
+	.casinos__block
+		margin: 0
+		box-shadow: none
 	.casinos__other-container
-		margin: 2.8rem 0 0
-
+		margin: 0 auto
+		max-width: 320px
+		box-shadow: 0 3px 20px rgba(0, 0, 0, 0.11)
 
 	.casinos__other-item
 		flex-direction: column!important
-		max-width: 320px
 		margin: 0 auto 30px
+		padding: 20px
 		position: relative
 
 	.casinos__other-block
@@ -86,6 +127,9 @@
 			display: none
 		.casinos__rait--other
 			display: block
+	
+	.casinos__other-number
+		padding-right: 0
 		
 		
 
@@ -101,8 +145,12 @@
 
 
 
-
-
+	.text
+		// display: none
+		max-width: 500px
+	.text__block-4
+		flex: 0 0 100%
+		max-width: 100%
 
 
 	/**/
@@ -111,37 +159,51 @@
 
 @media only screen and (max-width : 767px)
 	
-	.page::before
-		opacity: 1
-		background-size: 35% auto
-
+	.page
+		background-position: -40px 0
+		background-size: auto 300px
 	.top-content
-		padding-top: 207px
+		padding: 315px 15px 0
 
 	.header
-		margin-left: auto
-		margin-right: auto
+		max-width: 350px
+
+	.header__nova--thanks
+		padding-right: 0
+		justify-content: center
 
 	.page-title
-		margin-top: 0.8em
-		font-size: 1.875rem
+		margin-top: 0.5em
+		font-size: 32px
 
 	.advantages
-		padding-right: 0
+		margin-top: 28px
 		&__group
 			display: block
 			width: 100%
-			margin-left: 0
-			margin-right: 0
+			margin: 0
 		&__item
-			flex-direction: row-reverse
-			justify-content: flex-end
 			margin-bottom: 0.65em
 		&__ic
 			margin: 0 10px 0 0
 
-	.main-content
-		padding-top: 1.1rem
+	.download__line
+		flex-direction: column-reverse
+	.download__block
+		text-align: center
+
+	.activation__form
+		padding-top: 20px
+
+	.casinos
+		background: #fff
+		padding-bottom: 15px
+		&__top-container, .activation__form	
+			padding-left: 15px
+			padding-right: 15px
+		&__other-item
+			padding-left: 15px
+			padding-right: 15px
 
 
 	.casinos__top-container
@@ -152,21 +214,16 @@
 		line-height: 1.4
 		margin-bottom: 0
 	
-	.casinos__top-item--1
-		padding: 35px 0 33px
-		&::before
-			left: 13px
-	.rtl .casinos__top-item
-		&::before
-			left: auto
-			right: 13px
-	.casinos__top-item--1::before
-		.casinos__rait
-			margin-top: 2px
 	.casinos__info-data
 		margin-top: 6px
+		font-size: 15px
+
 	.casinos__bonus
 		margin-top: 6px
+
+
+	.text
+		margin-top: 30px
 
 	.footer__links
 		flex-direction: column
@@ -175,18 +232,15 @@
 		text-decoration: underline
 		margin: 7px 0
 
-	.header__nova--thanks
-		margin-bottom: 20px
-		color: #FFDA93
-	.rtl
-		.header__nova--thanks
-			justify-content: center
-		.page-title--thanks
-			text-align: center
-		.header__info
-			margin: 1.2rem 0 2rem
-			text-align: center
+	.page-title--thanks
+		text-align: center
+	.header__info
+		margin: 1.2rem 0 2rem
+		text-align: center
 
+
+	.header__nova--thanks .header-icon
+		margin-left: 20px
 
 
 	/**/
@@ -208,10 +262,11 @@
 
 	/**/
 
+@media only screen and (min-width : 1600px)
 
-@media only screen and (min-width : 1700px)
-
-	.page::before
-		background-position: 0 -252px
+	.step
+		right: 10%
+	.step--main
+		right: calc(10% - 20px)
 
 	/**/

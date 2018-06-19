@@ -446,14 +446,6 @@ only screen and (min-resolution: 144dpi)
 			display: inline-block
 			padding: 13px 30px 12px
 
-@supports (clip-path: polygon(0 0, 100% 0, 0 100%))
-	.activation__form-btn-wrap
-		&::before
-			left: 0
-			top: 0
-			background: linear-gradient(15deg, #A50000, #F42A2A)
-			box-shadow: 0 3px 6px rgba(#000, .16)
-			opacity: 0.2
 
 
 
@@ -504,9 +496,6 @@ only screen and (min-resolution: 144dpi)
 				z-index: 0
 			&--1, &--3
 				order: 1
-
-			
-
 
 	&__logo
 		display: flex
@@ -628,13 +617,7 @@ only screen and (min-resolution: 144dpi)
 		display: block
 		max-width: 194px
 		margin: 2px auto
-		&::before
-			height: 44px
-			background: url('../img/green-triangle.png') no-repeat 0 0 // ie
-			
-		&::after
-			height: 44px
-			background: linear-gradient(-105deg, #004A28, #26A500)
+
 	&__link
 		padding: 13px 0
 		text-decoration: none
@@ -790,6 +773,18 @@ only screen and (min-resolution: 144dpi)
 		&::before
 			left: auto
 			right: 0
+
+	.casinos__deposit-img
+		&:nth-child(3)
+			margin-left: 0
+		&--top
+			width: 66px
+			height: 42px
+			margin: 0 0 8px 8px
+		&--other
+			width: 50px
+			height: 31px
+			margin: 0 0 5px 5px
 	.text
 		text-align: right
 
